@@ -2,14 +2,13 @@ import discord
 import asyncio
 import random
 import datetime
+import os
 
 from discord import client
 from discord.colour import Color
 from discord.enums import Status
 
 client = discord.Client()
-
-token = "ODYxNTg0MTA0Nzk3MzcyNDI2.YOL6ug.INs9uZvVcarPktA-hmKf7Exx4bM"
 
 @client.event
 async def or_ready():
@@ -221,5 +220,5 @@ async def on_message(message):
 
             print('공지를 알려줌')
 
-
-client.run(token)
+access_token = os.environ['BOT_TOKEN']
+client.run(access_token)
